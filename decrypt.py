@@ -13,22 +13,28 @@ def main():
     time.sleep(0.5)
     slow_print("[+] Target hardware: TSA-Approved Combination Lock\n")
     
-    # Checkpoint 1: Años juntos
-    ans1 = input("[?] Checkpoint 1: ¿Cuántos años llevamos juntos?: ")
-    if ans1.strip() != "5":
+    # Checkpoint 1: Bilbao
+    ans1 = input("[?] Checkpoint 1: Ciudad donde empezó nuestra historia: ")
+    if "bilbao" not in ans1.strip().lower():
         slow_print("[-] Checkpoint 1 failed. Aborting handshake.")
         return
 
-    # Checkpoint 2: Perritos
-    ans2 = input("[?] Checkpoint 2: ¿Cuántos perritos vamos a tener?: ")
-    if ans2.strip() != "2":
-        slow_print("[-] Checkpoint 2 failed. Aborting handshake.")
+    # Checkpoint 2: Menorca
+    ans2 = input("[?] Checkpoint 2: Un viaje que recordaré toda la vida (todos, pero este especialmente): ")
+    if "menorca" not in ans2.strip().lower():
+        slow_print("[-] Checkpoint 2 failed. Access denied.")
         return
 
-    # Checkpoint 3: Día de reencuentro
-    ans3 = input("[?] Checkpoint 3: ¿Qué día de diciembre nos volvemos a ver?: ")
-    if ans3.strip() != "23":
-        slow_print("[-] Checkpoint 3 failed. Aborting handshake.")
+    # Checkpoint 3: Luz
+    ans3 = input("[?] Checkpoint 3: ¿A dónde vamos a ir cuando vuelvas?: ")
+    if "luz" not in ans3.strip().lower():
+        slow_print("[-] Checkpoint 3 failed. Target unknown.")
+        return
+
+    # Checkpoint 4: Argentino
+    ans4 = input("[?] Checkpoint 4: ¿Qué acento nos gusta más usar?: ")
+    if "argentino" not in ans4.strip().lower():
+        slow_print("[-] Checkpoint 4 failed. Identidad no confirmada, che.")
         return
 
     slow_print("\n[+] Integrity checks passed. Decrypting master combination...")
