@@ -1,28 +1,31 @@
-
 import sys, time, hmac, hashlib, unicodedata
 
 PAYLOAD = {
   "checks": [
     {
-      "salt": "8252305411c5ec80ba6367197b396099",
-      "hash": "9ff284a2d6456e56b8d84b4838cc0ea91253e647a3463213d5e96dbd7dab083d"
+      "salt": "a1c74081c7ea211f3c132862be4a343f",
+      "hash": "dc2d5c3c527913026986aef5283a6f4176ac0624da701dd9447bbd2da891b0ea"
     },
     {
-      "salt": "441853108b5f56698d9fa732d146972c",
-      "hash": "89a9d8b722f1777f2f476781fde11111628933a50540ee9ad204bac32d3613b2"
+      "salt": "89c51347dd113b38337cc042f6ab52e7",
+      "hash": "a54b8ed694e945486f7d56589b54ab91c3ec6d4963e47484b60ee0d7d7d7f585"
     },
     {
-      "salt": "0ea309d4d1b05aecc62ae0e9067d1bc2",
-      "hash": "dff13660966e9fb0f93f5c977fec4a6f649772a47afd858d9aa2beca36b88135"
+      "salt": "9e61af97ed2934cfb23bf37cbf97539b",
+      "hash": "933aa6c58c0bbc9db2082435d46834691960e103fe6417a6e2fb86c1850d34a5"
     },
     {
-      "salt": "4380803e0cc7cc063dc4a1754e86c983",
-      "hash": "b72b1ddf6b8e5829ee89950d4a6bb8a304683c4cc627d7c279957d66a32f8986"
+      "salt": "ca57359683c9d3b4a06afbd995abed9a",
+      "hash": "bff7cb3f9ef4f627c88119ca19c1c627c449a3f67593f85c5598e2f2723923c4"
+    },
+    {
+      "salt": "44651bbf2e2a70b184ddbf7f10a4ac95",
+      "hash": "a790bcbe32392cbda072665d3d2666360f0b27034f8131beb22cfd19691c9d47"
     }
   ],
-  "salt": "160cf4b0cd380cfe928643724b2c565a",
-  "blob": "bd2386",
-  "tag": "666ca8735a8d30870cdaf9864464197b74569147bdd9c5b8836491d701767dc6"
+  "salt": "1319a2b7077e2d403ab3d90f89a94ecd",
+  "blob": "e18337",
+  "tag": "3bde3b9a8342cb5715489a3470e8828ad5c9ad4d3321c2f180f95e9171eac3e1"
 }
 
 CHECKPOINTS = [
@@ -32,8 +35,10 @@ CHECKPOINTS = [
      "Checkpoint 2 failed. Access denied.", ""),
     ("¿A dónde vamos a ir cuando vuelvas?",
      "Checkpoint 3 failed. Target unknown.", ""),
+    ("¿Qué acento nos gusta más usar?",
+     "Checkpoint 4 failed. Identidad no confirmada, che.", ""),
     ("¿Cuántos años llevamos juntos?",
-     "Checkpoint 4 failed. Identidad no confirmada.", ""),
+     "Checkpoint 5 failed. Integrity check error.", ""),
 ]
 MAX_TRIES = 3
 ITER = 200_000
@@ -125,7 +130,7 @@ def main():
     line = "=" * 50
     print(f"\n{G}{line}\n   SUCCESS!  LOCK COMBINATION:  {B}[ {combo} ]{X}{G}\n{line}{X}\n")
     slow("Introduce los dígitos en el candado físico para abrir la caja.")
-    slow("¡Feliz cumpleaños! Ya no queda nada para el 23 de diciembre ❤️\n")
+    slow("¡Feliz cumpleaños mi vida! Ya no queda nada para vernos y pasar las mejores navidades ❤️\n")
     return 0
 
 if __name__ == "__main__":
