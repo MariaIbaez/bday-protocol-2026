@@ -4,25 +4,25 @@ import sys, time, hmac, hashlib, unicodedata
 PAYLOAD = {
   "checks": [
     {
-      "salt": "a1146e192a889f3c30a475980de6f175",
-      "hash": "6a89585a88a4f6ce034cb143f19defdad1f17df33babf6aeeac5f247bad73735"
+      "salt": "8252305411c5ec80ba6367197b396099",
+      "hash": "9ff284a2d6456e56b8d84b4838cc0ea91253e647a3463213d5e96dbd7dab083d"
     },
     {
-      "salt": "be1562801c67981e6b43530fe82a656d",
-      "hash": "0979ec9bd53579cf924bc40056a732780c4d77feee783264e8628ebe6ed291ad"
+      "salt": "441853108b5f56698d9fa732d146972c",
+      "hash": "89a9d8b722f1777f2f476781fde11111628933a50540ee9ad204bac32d3613b2"
     },
     {
-      "salt": "369a27578e56fbe94564f09ccb9d74bc",
-      "hash": "4087cf287ea4ff7ba96a1a3aab7e9386c64e91d2918e363d448e0d99b502ebdc"
+      "salt": "0ea309d4d1b05aecc62ae0e9067d1bc2",
+      "hash": "dff13660966e9fb0f93f5c977fec4a6f649772a47afd858d9aa2beca36b88135"
     },
     {
-      "salt": "aa66a3c55a9fbaff6630467c52b71611",
-      "hash": "19d70ed74bddb7eec802d82a168332e6a0e9b2a6fc7806ea72c4ce4ad58ba73b"
+      "salt": "4380803e0cc7cc063dc4a1754e86c983",
+      "hash": "b72b1ddf6b8e5829ee89950d4a6bb8a304683c4cc627d7c279957d66a32f8986"
     }
   ],
-  "salt": "6be2e481fdd1455ab38e39bc58ca94b5",
-  "blob": "3e37ce",
-  "tag": "f5ce9df63de345ce6368cd7b2e6d0d06f402291c4686f3b443a93144c0935c0e"
+  "salt": "160cf4b0cd380cfe928643724b2c565a",
+  "blob": "bd2386",
+  "tag": "666ca8735a8d30870cdaf9864464197b74569147bdd9c5b8836491d701767dc6"
 }
 
 CHECKPOINTS = [
@@ -32,8 +32,8 @@ CHECKPOINTS = [
      "Checkpoint 2 failed. Access denied.", ""),
     ("¿A dónde vamos a ir cuando vuelvas?",
      "Checkpoint 3 failed. Target unknown.", ""),
-    ("¿Qué acento nos gusta más usar?",
-     "Checkpoint 4 failed. Identidad no confirmada, che.", ""),
+    ("¿Cuántos años llevamos juntos?",
+     "Checkpoint 4 failed. Identidad no confirmada.", ""),
 ]
 MAX_TRIES = 3
 ITER = 200_000
@@ -58,7 +58,7 @@ def pause(s):
 def norm(s):
     s = unicodedata.normalize("NFKD", s.lower())
     s = "".join(c for c in s if not unicodedata.combining(c))
-    return " ".join("".join(c if c.isalnum() else " " for c in s).split())
+    return " ".join({"cinco": "5"}.get(w, w) for w in "".join(c if c.isalnum() else " " for c in s).split())
 
 def kdf(text, salt):
     return hashlib.pbkdf2_hmac("sha256", text.encode(), salt, ITER)
